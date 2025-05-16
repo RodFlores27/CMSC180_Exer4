@@ -66,28 +66,28 @@ echo "================================" >> test_results.txt
 
 for n in "${N_VALUES[@]}"; do
     for t in "${T_VALUES[@]}"; do
-        # echo "" >> test_results.txt
-        # echo "Matrix size: $n, Slaves: $t" >> test_results.txt
-        # echo "----------------------------" >> test_results.txt
-        # echo "Regular version:" >> test_results.txt
-        
-        # # Run regular version 3 times
-        # for run in 1 2 3; do
-        #     echo "Run $run:" >> test_results.txt
-        #     slave_pids=()
-        #     run_test "lab04" $n $t $run >> test_results.txt 2>&1
-        # done
-        
         echo "" >> test_results.txt
-        echo "Core-affine version:" >> test_results.txt
+        echo "Matrix size: $n, Slaves: $t" >> test_results.txt
+        echo "----------------------------" >> test_results.txt
+        echo "Regular version:" >> test_results.txt
         
-        # Run core-affine version 3 times
+        # Run regular version 3 times
         for run in 1; do
             echo "Run $run:" >> test_results.txt
-            slave_pids=() # resets the slave_pids array 
-            run_test "lab04_core_affine" $n $t $run >> test_results.txt 2>&1
-            # So, 2>&1 tells the shell to redirect all error output (stderr) to the same place as standard output (stdout).
+            slave_pids=()
+            run_test "lab04" $n $t $run >> test_results.txt 2>&1
         done
+        
+        # echo "" >> test_results.txt
+        # echo "Core-affine version:" >> test_results.txt
+        
+        # # Run core-affine version 3 times
+        # for run in 1; do
+        #     echo "Run $run:" >> test_results.txt
+        #     slave_pids=() # resets the slave_pids array 
+        #     run_test "lab04_core_affine" $n $t $run >> test_results.txt 2>&1
+        #     # So, 2>&1 tells the shell to redirect all error output (stderr) to the same place as standard output (stdout).
+        # done
     done
 done
 
