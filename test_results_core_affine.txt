@@ -1,0 +1,166 @@
+
+Test Results - Friday, 16 May, 2025 06:21:21 PM PST
+================================
+
+Core-affine version:
+Run 1:
+n=20000, t=2, run #1
+
+Slave execution time: 0.758996538 seconds
+Master IP: 127.0.0.1
+Running as master with n=20000, port=8000, slaves=2
+
+Master execution time: 0.821615709 seconds
+
+Slave execution time: 0.819160660 seconds
+Core-affine version:
+Run 1:
+n=20000, t=4, run #1
+
+Slave execution time: 0.780936913 seconds
+Slave execution time: 0.784003059 seconds
+Slave execution time: 0.789931505 seconds
+Slave execution time: 0.848386783 seconds
+Master IP: 127.0.0.1
+Running as master with n=20000, port=8000, slaves=4
+
+Master execution time: 0.855673376 seconds
+
+Core-affine version:
+Run 1:
+n=20000, t=8, run #1
+
+Slave execution time: 0.659532270 seconds
+Slave execution time: 0.673861306 seconds
+Slave execution time: 0.684422409 seconds
+Slave execution time: 0.682504276 seconds
+Slave execution time: 0.704115624 seconds
+Slave execution time: 0.694114546 seconds
+Slave execution time: 0.766433198 seconds
+Slave execution time: 0.795540012 seconds
+Master IP: 127.0.0.1
+Running as master with n=20000, port=8000, slaves=8
+
+Master execution time: 0.800877898 seconds
+
+Core-affine version:
+Run 1:
+n=20000, t=16, run #1
+
+Slave execution time: 0.656293916 seconds
+Slave execution time: 0.659166249 seconds
+Slave execution time: 0.677829365 seconds
+Slave execution time: 0.665873185 seconds
+Slave execution time: 0.649904956 seconds
+Slave execution time: 0.690087383 seconds
+Slave execution time: 0.677165628 seconds
+Slave execution time: 0.640178345 seconds
+Slave execution time: 0.677163007 seconds
+Slave execution time: 0.725109120 seconds
+Slave execution time: 0.679471499 seconds
+Slave execution time: 0.636368915 seconds
+Slave execution time: 0.698130103 seconds
+Slave execution time: 0.741147365 seconds
+Slave execution time: 0.743885914 seconds
+Slave execution time: 0.803260249 seconds
+Master IP: 127.0.0.1
+Running as master with n=20000, port=8000, slaves=16
+
+Master execution time: 0.813314406 seconds
+
+Core-affine version:
+Run 1:
+n=25000, t=2, run #1
+
+Slave execution time: 1.195476216 seconds
+Master IP: 127.0.0.1
+Running as master with n=25000, port=8000, slaves=2
+
+Master execution time: 1.286899573 seconds
+
+Slave execution time: 1.284874663 seconds
+Core-affine version:
+Run 1:
+n=25000, t=4, run #1
+
+Slave execution time: 1.122610786 seconds
+Slave execution time: 1.144280904 seconds
+Slave execution time: 1.135373391 seconds
+Slave execution time: 1.207662519 seconds
+Core-affine version:
+Run 1:
+n=25000, t=8, run #1
+
+Slave execution time: 1.045095165 seconds
+Slave execution time: 1.058313193 seconds
+Slave execution time: 1.054056265 seconds
+Slave execution time: 1.080235871 seconds
+Slave execution time: 1.076081442 seconds
+Slave execution time: 1.082614610 seconds
+Slave execution time: 1.179508693 seconds
+Slave execution time: 1.219139991 seconds
+Core-affine version:
+Run 1:
+n=25000, t=16, run #1
+
+Slave execution time: 1.040241407 seconds
+Slave execution time: 1.025062263 seconds
+Slave execution time: 1.044630498 seconds
+Slave execution time: 1.064937498 seconds
+Slave execution time: 1.039030112 seconds
+Slave execution time: 1.050866538 seconds
+Slave execution time: 1.070558240 seconds
+Slave execution time: 1.036421426 seconds
+Slave execution time: 1.043662925 seconds
+Slave execution time: 1.041656189 seconds
+Slave execution time: 1.042433825 seconds
+Slave execution time: 1.015749306 seconds
+Slave execution time: 1.033872213 seconds
+Slave execution time: 1.183731814 seconds
+Slave execution time: 1.170160295 seconds
+Slave execution time: 1.342278285 seconds
+Core-affine version:
+Run 1:
+n=30000, t=2, run #1
+
+Slave execution time: 1.702230893 seconds
+Core-affine version:
+Run 1:
+n=30000, t=4, run #1
+
+Slave execution time: 1.591117908 seconds
+Slave execution time: 1.591035235 seconds
+Slave execution time: 1.600806681 seconds
+Slave execution time: 1.683758774 seconds
+Core-affine version:
+Run 1:
+n=30000, t=8, run #1
+
+Slave execution time: 1.558675182 seconds
+Slave execution time: 1.560063927 seconds
+Slave execution time: 1.571799435 seconds
+Slave execution time: 1.575067784 seconds
+Slave execution time: 1.578703579 seconds
+Slave execution time: 1.574839625 seconds
+Slave execution time: 1.728455042 seconds
+Slave execution time: 1.780981739 seconds
+Core-affine version:
+Run 1:
+n=30000, t=16, run #1
+
+Slave execution time: 1.558305328 seconds
+Slave execution time: 1.581221625 seconds
+Slave execution time: 1.574563990 seconds
+Slave execution time: 1.560622683 seconds
+Slave execution time: 1.567222208 seconds
+Slave execution time: 1.551056532 seconds
+Slave execution time: 1.573819249 seconds
+Slave execution time: 1.596598367 seconds
+Slave execution time: 1.614255631 seconds
+Slave execution time: 1.572516189 seconds
+Slave execution time: 1.621237776 seconds
+Slave execution time: 1.584987968 seconds
+Slave execution time: 1.610062900 seconds
+Slave execution time: 1.747347672 seconds
+Slave execution time: 1.826597884 seconds
+Slave execution time: 1.771558334 seconds

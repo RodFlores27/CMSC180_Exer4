@@ -57,10 +57,11 @@ int read_config(char master_ip[MAX_IP_LEN], SlaveInfo slaves[], int *num_slaves,
         {
             if (strcmp(role, "master") == 0)
             {
-                if (is_slave)
-                {
-                    strcpy(master_ip, ip); // copy master ip
-                }
+                strcpy(master_ip, ip);            
+                // if (is_slave)
+                // {
+                //     strcpy(master_ip, ip); // copy master ip
+                // }
             }
             else if (strcmp(role, "slave") == 0)
             {
@@ -96,21 +97,21 @@ int run_as_master(int n, int port, int num_slaves, SlaveInfo slaves[])
     }
 
     // Function to print an n x n matrix
-    void print_matrix(int **M, int n)
-    {
-        printf("Matrix contents:\n");
-        for (int i = 0; i < n; i++)
-        {
-            for (int j = 0; j < n; j++)
-            {
-                printf("%d ", M[i][j]);
-            }
-            printf("\n");
-        }
-    }
+    // void print_matrix(int **M, int n)
+    // {
+    //     printf("Matrix contents:\n");
+    //     for (int i = 0; i < n; i++)
+    //     {
+    //         for (int j = 0; j < n; j++)
+    //         {
+    //             printf("%d ", M[i][j]);
+    //         }
+    //         printf("\n");
+    //     }
+    // }
 
-    printf("My Matrix: \n\n");
-    print_matrix(M, n); // Print the matrix for verification
+    // printf("My Matrix: \n\n");
+    // print_matrix(M, n); // Print the matrix for verification
 
     // Calculate rows per slave
     int rows_per_slave = n / num_slaves;
@@ -151,7 +152,7 @@ int run_as_master(int n, int port, int num_slaves, SlaveInfo slaves[])
             continue;
         }
 
-        printf("Connected to slave %d (%s:%d)\n", s, slaves[s].ip, slaves[s].port);
+        // printf("Connected to slave %d (%s:%d)\n", s, slaves[s].ip, slaves[s].port);
 
         // Send matrix dimensions
         send(sock, &n, sizeof(int), 0);
@@ -172,7 +173,7 @@ int run_as_master(int n, int port, int num_slaves, SlaveInfo slaves[])
         char ack[4];
         recv(sock, ack, 3, 0);
         ack[3] = '\0';
-        printf("Received from slave %d: %s\n", s, ack);
+        // printf("Received from slave %d: %s\n", s, ack);
 
         close(sock);
     }
@@ -197,7 +198,7 @@ int run_as_master(int n, int port, int num_slaves, SlaveInfo slaves[])
 // Function to run as slave
 int run_as_slave(int port, char master_ip[MAX_IP_LEN])
 {
-    printf("Running as slave with port=%d, master=%s\n", port, master_ip);
+    // printf("Running as slave with port=%d, master=%s\n", port, master_ip);
 
     // Create socket
     int server_fd = socket(AF_INET, SOCK_STREAM, 0);
@@ -235,7 +236,7 @@ int run_as_slave(int port, char master_ip[MAX_IP_LEN])
         return -1;
     }
 
-    printf("Slave listening on port %d...\n", port);
+    // printf("Slave listening on port %d...\n", port);
 
     // Accept incoming connection
     struct sockaddr_in client_addr;
@@ -250,7 +251,7 @@ int run_as_slave(int port, char master_ip[MAX_IP_LEN])
 
     char client_ip[INET_ADDRSTRLEN];
     inet_ntop(AF_INET, &client_addr.sin_addr, client_ip, INET_ADDRSTRLEN);
-    printf("Connection accepted from %s:%d\n", client_ip, ntohs(client_addr.sin_port));
+    // printf("Connection accepted from %s:%d\n", client_ip, ntohs(client_addr.sin_port));
 
     // Start timer
     struct timespec time_before, time_after;
@@ -265,7 +266,7 @@ int run_as_slave(int port, char master_ip[MAX_IP_LEN])
     recv(client_fd, &start_row, sizeof(int), 0);
     recv(client_fd, &num_rows, sizeof(int), 0);
 
-    printf("Receiving submatrix: n=%d, start_row=%d, num_rows=%d\n", n, start_row, num_rows);
+    // printf("Receiving submatrix: n=%d, start_row=%d, num_rows=%d\n", n, start_row, num_rows);
 
     // Allocate memory for submatrix
     int **submatrix = (int **)malloc(num_rows * sizeof(int *));
@@ -276,15 +277,15 @@ int run_as_slave(int port, char master_ip[MAX_IP_LEN])
     }
 
     // Print a small portion of the submatrix for verification (if matrix is large)
-    printf("Received submatrix (showing up to 5x5):\n");
-    for (int i = 0; i < (num_rows < 5 ? num_rows : 5); i++)
-    {
-        for (int j = 0; j < (n < 5 ? n : 5); j++)
-        {
-            printf("%d ", submatrix[i][j]);
-        }
-        printf("...\n");
-    }
+    // printf("Received submatrix (showing up to 5x5):\n");
+    // for (int i = 0; i < (num_rows < 5 ? num_rows : 5); i++)
+    // {
+    //     for (int j = 0; j < (n < 5 ? n : 5); j++)
+    //     {
+    //         printf("%d ", submatrix[i][j]);
+    //     }
+    //     printf("...\n");
+    // }
 
     // Send acknowledgment
     send(client_fd, "ack", 3, 0);
@@ -346,6 +347,7 @@ int main(int argc, char *argv[])
             printf("No slaves found in configuration file\n");
             return 1;
         }
+        printf("\nMaster IP: %s\n", master_ip);
         run_as_master(n, port, num_slaves, slaves);
     }
     else
